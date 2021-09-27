@@ -83,7 +83,6 @@ const connector = connect(mapState, mapDispatch)
 type ReduxToProps = ConnectedProps<typeof connector>
 
 const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = ({ categoryPosition, updateCategoryPosition }) => {
-    console.log(categoryPosition)
     return (
         <div>
             <Carousel

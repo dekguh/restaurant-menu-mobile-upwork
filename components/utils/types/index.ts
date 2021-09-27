@@ -49,3 +49,13 @@ export type TCardCategoryFirst = {
 }
 
 export interface ICategoryFirstCarousel {}
+
+export interface IBannerWrap {
+    image: string;
+    children?: React.ReactNode | JSX.Element | undefined;
+}
+
+export interface IBannerContent {
+    title: string;
+    description?: string;
+}
