@@ -1,0 +1,23 @@
+.card-category-first {
+    .image-content {
+        object-fit: cover;
+        width: 100%;
+        height: 90px;
+        border-radius: 8px;
+    }
+
+    .title-content {
+        font-weight: 400 !important;
+        text-align: center;
+
+        &.active {
+            color: $color-primary !important;
+        }
+    }
+}
+
+.carousel-current-active {
+    height: 1px;
+    width: 100%;
+    background-color: $color-primary;
+}
