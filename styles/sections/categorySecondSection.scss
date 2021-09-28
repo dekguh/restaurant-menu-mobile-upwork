@@ -1,0 +1,41 @@
+.list-category-second {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+
+    li {
+        flex: 0 1 auto;
+        width: 50%;
+        padding-right: 12px;
+        padding-bottom: 8px;
+
+        &:nth-child(even) {
+            padding-right: 0;
+        }
+    }
+}
+
+.label-category-second {
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid $color-gray-primary;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    transition: .4s;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+
+    &.active {
+        color: #FFFFFF;
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+}

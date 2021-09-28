@@ -128,3 +128,13 @@ export interface ICardListSchedule {
     isOpen: boolean;
     updateIsOpen: (status : boolean) => void
 }
+
+export interface IListCategorySecond {
+    listCategory: TDataCategory;
+}
+
+export interface ILabelCategorySecond {
+    text: string;
+    onClick?: React.MouseEventHandler;
+    active?: boolean;
+}
