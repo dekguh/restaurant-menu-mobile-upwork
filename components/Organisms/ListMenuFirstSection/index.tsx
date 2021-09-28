@@ -7,27 +7,36 @@ import { RootState } from '../../utils/redux/Store'
 import { IListMenuSection, TDataMenu } from '../../utils/types'
 
 const mapState = (state: RootState) => ({
-    categoryPosition: state.choose.categoryPosition
+    categoryPosition: state.choose.categoryPosition,
+    chooseValue: state.choose.chooseValue
 })
 
 const connector = connect(mapState, {})
 type ReduxToProps = ConnectedProps<typeof connector>
 
-const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ categoryPosition }) => {
+const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ categoryPosition, chooseValue }) => {
     const [dataFiltered, setDataFiltered] = useState<TDataMenu>(DataMenu.filter(data => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase()))
 
     useEffect(() => {
-        const filtered = DataMenu.filter(data => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase())
+        const filtered = chooseValue === 'main_menu'
+        ? DataMenu.filter(data => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase())
+        : DataMenu.filter(data => data.category.toLowerCase() === 'drinks')
         setDataFiltered(filtered)
-    }, [categoryPosition])
+    }, [categoryPosition, chooseValue])
 
     return (
         <div>
-            <TitleSection
+            {chooseValue === 'main_menu'
+            ? (<TitleSection
                 title={dataCategory[categoryPosition-1].name}
                 description={dataCategory[categoryPosition-1].description}
                 classes='text-center margin-b-16'
-            />
+            />)
+            : (<TitleSection
+                title='Drinks'
+                description='All fresh fruit and water'
+                classes='text-center margin-b-16'
+            />)}
 
             {dataFiltered?.length >= 1 && dataFiltered?.map((data, i) => (
                 <div className='margin-b-12' key={i}>
