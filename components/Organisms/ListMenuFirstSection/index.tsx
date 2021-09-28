@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect, ConnectedProps } from 'react-redux'
 import CardMenuFirst from '../../Molecules/card/CardMenuFirst'
 import TitleSection from '../../Molecules/TitleSection'
-import { dataCategory, DataMenu } from '../../utils/data'
+import { dataCategory, dataMenu } from '../../utils/data'
 import { RootState } from '../../utils/redux/Store'
 import { IListMenuSection, TDataMenu } from '../../utils/types'
 
@@ -15,12 +15,12 @@ const connector = connect(mapState, {})
 type ReduxToProps = ConnectedProps<typeof connector>
 
 const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ categoryPosition, chooseValue }) => {
-    const [dataFiltered, setDataFiltered] = useState<TDataMenu>(DataMenu.filter(data => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase()))
+    const [dataFiltered, setDataFiltered] = useState<TDataMenu>(dataMenu.filter((data : any) => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase()))
 
     useEffect(() => {
         const filtered = chooseValue === 'main_menu'
-        ? DataMenu.filter(data => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase())
-        : DataMenu.filter(data => data.category.toLowerCase() === 'drinks')
+        ? dataMenu.filter((data : any) => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase())
+        : dataMenu.filter((data : any) => data.category.toLowerCase() === 'drinks')
         setDataFiltered(filtered)
     }, [categoryPosition, chooseValue])
 
@@ -38,7 +38,7 @@ const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ cate
                 classes='text-center margin-b-16'
             />)}
 
-            {dataFiltered.length >= 1 ? dataFiltered.map((data, i) => (
+            {dataFiltered.length >= 1 ? dataFiltered?.map((data, i) => (
                 <div className='margin-b-12' key={i}>
                     <CardMenuFirst
                         name={data.name}

@@ -1,5 +1,6 @@
 import React from 'react'
 import BannerImageSection from '../Organisms/BannerSection/BannerImageSection'
+import CategorySecondSection from '../Organisms/CategorySecondSection'
 import OpenHourSection from '../Organisms/OpenHourSection'
 import { dataSchedule } from '../utils/data'
 
@@ -21,6 +22,12 @@ const MenuSecond : React.FC = () => {
                 <OpenHourSection
                     description='open hour 08.00 - 23.00'
                     listSchedule={dataSchedule}
+                />
+            </div>
+
+            <div className='padding-l-16 padding-r-16 margin-b-20'>
+                <CategorySecondSection
+
                 />
             </div>
         </>
