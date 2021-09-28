@@ -38,7 +38,7 @@ const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ cate
                 classes='text-center margin-b-16'
             />)}
 
-            {dataFiltered?.length >= 1 && dataFiltered?.map((data, i) => (
+            {dataFiltered.length >= 1 ? dataFiltered.map((data, i) => (
                 <div className='margin-b-12' key={i}>
                     <CardMenuFirst
                         name={data.name}
@@ -52,7 +52,12 @@ const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ cate
                         listLabel={data.listLabel}
                     />
                 </div>
-            ))}
+            ))
+        : (
+            <div className='message-not-found'>
+                <span>not found</span>
+            </div>
+        )}
         </div>
     )
 }
