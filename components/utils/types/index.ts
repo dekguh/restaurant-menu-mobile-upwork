@@ -12,13 +12,13 @@ export type TDataMenu = Array<{
     path: string;
     description: string;
     category: string;
-    image: string;
+    image?: string;
     startPrice: number;
-    endPrice: number;
-    new?: boolean;
+    endPrice?: number;
+    newMenu?: boolean;
     bestseller?: boolean;
-    listLabel?: Array<{
-        icon: JSX.Element | React.ReactNode | string;
+    listLabel: Array<{
+        icon: any;
         description: string;
     }>
 }>
@@ -58,4 +58,46 @@ export interface IBannerWrap {
 export interface IBannerContent {
     title: string;
     description?: string;
+}
+
+export interface ITitleSection {
+    classes?: string;
+    title: string;
+    description?: string;
+}
+
+export interface IListMenuSection {}
+
+export interface ICardMenuFirst {
+    name: string;
+    path?: string;
+    description: string;
+    category: string;
+    image?: string;
+    startPrice: number;
+    endPrice?: number;
+    newMenu?: boolean;
+    bestseller?: boolean;
+    listLabel: Array<{
+        icon: any;
+        description: string;
+    }>
+}
+
+export interface IBackgroundDotted {
+    color: string;
+    width?: number;
+    height?: number;
+}
+
+export interface IListLabelFirst {
+    listLabel: Array<{
+        icon: any;
+        description: string;
+    }>
+}
+
+export interface ILabelBox {
+    text: string;
+    classes?: string;
 }

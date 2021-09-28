@@ -92,7 +92,7 @@ const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = 
                 containerClass='container-category-carousel'
                 partialVisible={true}
                 slidesToSlide={1}
-                customButtonGroup={<ButtonGroup totalCat={5} getCurrentClick={updateCategoryPosition} currentClick={categoryPosition} />}
+                customButtonGroup={<ButtonGroup totalCat={dataCategory.length} getCurrentClick={updateCategoryPosition} currentClick={categoryPosition} />}
                 arrows={false}
             >
                 {dataCategory.length >= 1 && dataCategory.map((data, i) => (
