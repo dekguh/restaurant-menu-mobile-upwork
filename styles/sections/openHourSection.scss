@@ -1,0 +1,96 @@
+.open-hour-wrapper {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: $color-white;
+    box-shadow: 0 0 8px rgba($color: #000000, $alpha: .08);
+    display: flex;
+    flex-flow: row nowrap;
+
+    .open-hour-wrapper-icon {
+        flex: 0 1 auto;
+        padding-right: 12px;
+
+        .icon {
+            position: relative;
+            border-radius: 8px;
+            height: 60px;
+            width: 60px;
+            background-color: $color-primary;
+            display: block;
+
+            i {
+                position: absolute;
+                top: 2px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: $color-white;
+                font-size: 35px;
+            }
+        }
+    }
+
+    .open-hour-wrapper-detail {
+        flex: 1 1 auto;
+    }
+}
+
+.card-list-schedule-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgba($color: #000000, $alpha: .8);
+    padding: 20px;
+    transition: opacitiy .3s, visibility .4s;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.nonactive {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.card-list-schedule-box {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 15px;
+    border-radius: 8px;
+    background-color: $color-white;
+}
+
+.list-schedule-open {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $color-gray-primary;
+        display: flex;
+        flex-flow: row nowrap;
+
+        .day {
+            flex: 1 1 auto;
+        }
+
+        .time {
+            flex: 0 1 auto;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    }
+}

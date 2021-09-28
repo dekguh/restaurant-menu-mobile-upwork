@@ -1,5 +1,5 @@
 import { IconBread, IconDrink, IconEgg, IconMeat, IconSauceKetchup, IconSausage, IconVegetarian } from '../svg'
-import { TDataCategory, TDataMenu } from '../types'
+import { TDataCategory, TDataMenu, TDataSchedule } from '../types'
 
 export const dataCategory : TDataCategory = [
     {
@@ -40,7 +40,7 @@ export const dataCategory : TDataCategory = [
     }
 ]
 
-export const DataMenu : TDataMenu = [
+export const dataMenu : TDataMenu = [
     {
         name: 'Soup Meatball',
         path: 'soup-meatball',
@@ -191,5 +191,33 @@ export const DataMenu : TDataMenu = [
                 description: 'juice'
             },
         ]
+    }
+]
+
+export const dataSchedule : TDataSchedule = [
+    {
+        day: 'Monday',
+        openTime: '08.00',
+        closeTime: '23.00'
+    },
+    {
+        day: 'Tuesday',
+        openTime: '08.00',
+        closeTime: '23.00'
+    },
+    {
+        day: 'Wednesday',
+        openTime: '08.00',
+        closeTime: '23.00'
+    },
+    {
+        day: 'Thursday',
+        openTime: '08.00',
+        closeTime: '23.00'
+    },
+    {
+        day: 'Friday',
+        openTime: '08.00',
+        closeTime: '23.00'
     }
 ]

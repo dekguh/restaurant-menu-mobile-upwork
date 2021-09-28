@@ -101,3 +101,30 @@ export interface ILabelBox {
     text: string;
     classes?: string;
 }
+
+export interface IBannerImageSection {
+    image: string;
+    height?: number;
+}
+
+export type TDataSchedule = Array<{
+    day: string;
+    openTime: string;
+    closeTime: string;
+}>
+
+export type IOpenHourSection = {
+    description?: string;
+    listSchedule: TDataSchedule;
+}
+
+export interface IButtonText {
+    text: string;
+    onClick?: React.MouseEventHandler;
+}
+
+export interface ICardListSchedule {
+    listSchedule: TDataSchedule;
+    isOpen: boolean;
+    updateIsOpen: (status : boolean) => void
+}
