@@ -1,11 +1,12 @@
 import React from 'react'
 import { ILabelCategorySecond } from '../../utils/types'
+import { Link } from 'react-scroll'
 
-const LabelCategorySecond : React.FC<ILabelCategorySecond> = ({ text, onClick, active }) => {
+const LabelCategorySecond : React.FC<ILabelCategorySecond> = ({ text, toCategoryPath, offset, duration }) => {
     return (
-        <button className={`label-category-second ${active ? 'active' : 'nonactive'}`} onClick={onClick}>
+        <Link className='label-category-second' to={toCategoryPath} activeClass='active'>
             {text}
-        </button>
+        </Link>
     )
 }
 

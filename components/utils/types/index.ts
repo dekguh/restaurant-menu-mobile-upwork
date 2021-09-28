@@ -135,6 +135,15 @@ export interface IListCategorySecond {
 
 export interface ILabelCategorySecond {
     text: string;
-    onClick?: React.MouseEventHandler;
     active?: boolean;
+    toCategoryPath: string;
+    offset: number;
+    duration: number;
+}
+
+export interface IListMenuSecondSection {
+    categoryPath: string;
+    title: string;
+    description?: string;
+    dataMenu: TDataMenu;
 }

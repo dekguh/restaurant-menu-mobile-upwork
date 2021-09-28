@@ -16,15 +16,16 @@ const mapDispatch = {
 const connector = connect(mapState, mapDispatch)
 type ReduxToProps = ConnectedProps<typeof connector>
 
-const ListCategorySecond : React.FC<IListCategorySecond & ReduxToProps> = ({ listCategory, categoryPosition, updateCategoryPosition }) => {
+const ListCategorySecond : React.FC<IListCategorySecond & ReduxToProps> = ({ listCategory }) => {
     return (
         <ul className='list-category-second'>
             {listCategory.length >= 1 && listCategory.map((data, i) => (
                 <li key={i}>
                     <LabelCategorySecond
                         text={data.name}
-                        onClick={e => updateCategoryPosition(i+1)}
-                        active={categoryPosition === i+1}
+                        toCategoryPath={data.path}
+                        duration={800}
+                        offset={0}
                     />
                 </li>
             ))}

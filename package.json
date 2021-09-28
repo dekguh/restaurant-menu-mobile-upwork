@@ -26,6 +26,7 @@
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "@types/react": "17.0.24",
+    "@types/react-scroll": "^1.8.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "react-svg-loader": "^3.0.3",
