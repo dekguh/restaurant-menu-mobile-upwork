@@ -31,7 +31,7 @@ const MenuSecond : React.FC = () => {
             </div>
 
             <div className='padding-l-16 padding-r-16 margin-b-20'>
-                <div className='margin-b-12'>
+                <div className='margin-b-16'>
                     <ListMenuSecondSection
                         title='Starters'
                         categoryPath='starters'
@@ -39,7 +39,7 @@ const MenuSecond : React.FC = () => {
                     />
                 </div>
 
-                <div className='margin-b-12'>
+                <div className='margin-b-16'>
                     <ListMenuSecondSection
                         title='Seafoods'
                         categoryPath='seafoods'

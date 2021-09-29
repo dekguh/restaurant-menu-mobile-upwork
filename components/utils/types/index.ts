@@ -20,7 +20,8 @@ export type TDataMenu = Array<{
     listLabel: Array<{
         icon: any;
         description: string;
-    }>
+    }>,
+    isAvailable?: boolean;
 }>
 
 export type TChooseRadio = {
@@ -146,4 +147,8 @@ export interface IListMenuSecondSection {
     title: string;
     description?: string;
     dataMenu: TDataMenu;
+}
+
+export interface ICardMenuSecond extends ICardMenuFirst {
+    isAvailable?: boolean;
 }
