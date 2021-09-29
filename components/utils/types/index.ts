@@ -152,3 +152,5 @@ export interface IListMenuSecondSection {
 export interface ICardMenuSecond extends ICardMenuFirst {
     isAvailable?: boolean;
 }
+
+export interface IListLabelSecond extends IListLabelFirst {}

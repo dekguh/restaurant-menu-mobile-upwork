@@ -3,7 +3,7 @@ import BannerImageSection from '../Organisms/BannerSection/BannerImageSection'
 import CategorySecondSection from '../Organisms/CategorySecondSection'
 import ListMenuSecondSection from '../Organisms/ListMenuSecondSection'
 import OpenHourSection from '../Organisms/OpenHourSection'
-import { dataMenu, dataSchedule } from '../utils/data'
+import { dataCategory, dataMenu, dataSchedule } from '../utils/data'
 
 const MenuSecond : React.FC = () => {
     return (
@@ -31,21 +31,15 @@ const MenuSecond : React.FC = () => {
             </div>
 
             <div className='padding-l-16 padding-r-16 margin-b-20'>
-                <div className='margin-b-16'>
-                    <ListMenuSecondSection
-                        title='Starters'
-                        categoryPath='starters'
-                        dataMenu={dataMenu}
-                    />
-                </div>
-
-                <div className='margin-b-16'>
-                    <ListMenuSecondSection
-                        title='Seafoods'
-                        categoryPath='seafoods'
-                        dataMenu={dataMenu}
-                    />
-                </div>
+                {dataCategory.length >= 1 && dataCategory.map((data, i) => (
+                    <div className='margin-b-20' key={i}>
+                        <ListMenuSecondSection
+                            title={data.name}
+                            categoryPath={data.path}
+                            dataMenu={dataMenu}
+                        />
+                    </div>
+                ))}
             </div>
         </>
     )

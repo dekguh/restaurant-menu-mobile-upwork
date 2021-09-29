@@ -8,11 +8,51 @@
     align-items: center;
 
     .card-menu-second-detail {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
+        width: 70%;
         padding-right: 12px;
+
+        .title {
+            color: $color-primary !important;
+        }
+
+        .description {
+            line-height: 1.4 !important;
+        }
     }
 
     .card-menu-second-pricing {
         flex: 0 1 auto;
+        width: 30%;
+
+        .not-available {
+            display: block;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .pricing {
+            display: block;
+            color: $color-heading;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+}
+
+.list-label-second {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin-right: 8px;
+        padding: 4px 12px;
+        background-color: $color-gray-primary;
+        border-radius: 4px;
+        font-size: 10px;
     }
 }

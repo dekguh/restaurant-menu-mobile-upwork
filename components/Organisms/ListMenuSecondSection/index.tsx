@@ -17,7 +17,7 @@ const ListMenuSecondSection : React.FC<IListMenuSecondSection> = ({ categoryPath
             <div className='divider-border margin-t-12 margin-b-12'></div>
 
             {dataFiltered.length >= 1 && dataFiltered.map((data, i) => (
-                <div key={i}>
+                <div key={i} className='margin-b-12'>
                     <CardMenuSecond
                         name={data.name}
                         category={data.category}
@@ -27,6 +27,7 @@ const ListMenuSecondSection : React.FC<IListMenuSecondSection> = ({ categoryPath
                         bestseller={data.bestseller}
                         newMenu={data.newMenu}
                         listLabel={data.listLabel}
+                        isAvailable={data.isAvailable}
                     />
                 </div>
             ))}

@@ -16,7 +16,7 @@ export const dataCategory : TDataCategory = [
     },
     {
         name: 'Main Courses',
-        path: 'mainCourses',
+        path: 'maincourses',
         description: 'From the best chefs in the world',
         image: '/foods/hamburger-deluxe.jpg'
     },
@@ -51,6 +51,7 @@ export const dataMenu : TDataMenu = [
         endPrice: 20,
         newMenu: false,
         bestseller: false,
+        isAvailable: true,
         listLabel: [
             {
                 icon: IconSauceKetchup,
@@ -76,6 +77,7 @@ export const dataMenu : TDataMenu = [
         endPrice: 20,
         newMenu: true,
         bestseller: false,
+        isAvailable: true,
         listLabel: [
             {
                 icon: IconSauceKetchup,
@@ -97,6 +99,7 @@ export const dataMenu : TDataMenu = [
         endPrice: 20,
         newMenu: true,
         bestseller: false,
+        isAvailable: true,
         listLabel: [
             {
                 icon: IconSauceKetchup,
@@ -122,6 +125,7 @@ export const dataMenu : TDataMenu = [
         endPrice: 30,
         newMenu: false,
         bestseller: true,
+        isAvailable: false,
         listLabel: [
             {
                 icon: IconSauceKetchup,
@@ -143,6 +147,7 @@ export const dataMenu : TDataMenu = [
         endPrice: 20,
         newMenu: false,
         bestseller: true,
+        isAvailable: false,
         listLabel: [
             {
                 icon: IconSausage,
@@ -168,6 +173,7 @@ export const dataMenu : TDataMenu = [
         endPrice: 5,
         newMenu: true,
         bestseller: true,
+        isAvailable: true,
         listLabel: [
             {
                 icon: IconDrink,
@@ -185,6 +191,7 @@ export const dataMenu : TDataMenu = [
         endPrice: 5,
         newMenu: true,
         bestseller: true,
+        isAvailable: true,
         listLabel: [
             {
                 icon: IconDrink,
