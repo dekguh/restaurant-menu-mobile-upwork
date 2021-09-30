@@ -54,7 +54,9 @@ const ButtonGroup = ({ next, previous, goToSlide, getCurrentClick, totalCat, cur
                 }}
                 className='button-carousel-category left'
             >
-                <i><BiChevronLeft /></i>
+                <span className='button-carousel-category-icon'>
+                    <i className='icon'><BiChevronLeft /></i>
+                </span>
             </button>
 
             <button
@@ -64,7 +66,9 @@ const ButtonGroup = ({ next, previous, goToSlide, getCurrentClick, totalCat, cur
                 }}
                 className='button-carousel-category right'
             >
-                <i><BiChevronRight /></i>
+                <span className='button-carousel-category-icon'>
+                    <i className='icon'><BiChevronRight /></i>
+                </span>
             </button>
           </div>
       </div>
