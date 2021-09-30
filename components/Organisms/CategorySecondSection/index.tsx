@@ -38,9 +38,9 @@ const CategorySecondSection = () => {
                     />
                 </div>
 
-                <div className='action'>
+                {scrollY >= 400 && (<div className='action'>
                     <ButtonText text={isActive ? 'close' : 'open'} onClick={e => setIsActive(!isActive)} />
-                </div>
+                </div>)}
             </div>
 
             <div className='divider-border margin-b-12'></div>
