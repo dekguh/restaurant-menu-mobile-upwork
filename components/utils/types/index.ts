@@ -140,6 +140,7 @@ export interface ILabelCategorySecond {
     toCategoryPath: string;
     offset: number;
     duration: number;
+    isSpy?: boolean;
 }
 
 export interface IListMenuSecondSection {

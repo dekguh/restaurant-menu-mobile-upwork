@@ -198,6 +198,78 @@ export const dataMenu : TDataMenu = [
                 description: 'juice'
             },
         ]
+    },
+    {
+        name: 'Coffee Milk',
+        path: 'coffee-milk',
+        category: 'drinks',
+        image: '/foods/coffee-milk.jpg',
+        description: 'special coffee with fresh milk',
+        startPrice: 8,
+        endPrice: 8,
+        newMenu: true,
+        bestseller: true,
+        isAvailable: true,
+        listLabel: [
+            {
+                icon: IconDrink,
+                description: 'coffee'
+            },
+        ]
+    },
+    {
+        name: 'Original Milk',
+        path: 'original-milk',
+        category: 'drinks',
+        image: '/foods/original-milk.jpg',
+        description: 'original fresh milk',
+        startPrice: 8,
+        endPrice: 8,
+        newMenu: true,
+        bestseller: true,
+        isAvailable: true,
+        listLabel: [
+            {
+                icon: IconDrink,
+                description: 'milk'
+            },
+        ]
+    },
+    {
+        name: 'Lemon Tea',
+        path: 'lemon-tea',
+        category: 'drinks',
+        image: '/foods/lemon-tea.jpg',
+        description: 'special tea with lemon',
+        startPrice: 4,
+        endPrice: 4,
+        newMenu: false,
+        bestseller: true,
+        isAvailable: true,
+        listLabel: [
+            {
+                icon: IconDrink,
+                description: 'tea'
+            },
+        ]
+    },
+    {
+        name: 'Tea With Milk',
+        path: 'tea-with-milk',
+        category: 'drinks',
+        image: '/foods/tea-with-milk.jpg',
+        description: 'special tea with milk',
+        startPrice: 4,
+        endPrice: 4,
+        newMenu: false,
+        bestseller: false,
+        isAvailable: true,
+        listLabel: [
+            {
+                icon: IconDrink,
+                description: 'tea'
+            },
+        ]
     }
 ]
 

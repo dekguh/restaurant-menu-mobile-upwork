@@ -29,15 +29,48 @@
     background-color: transparent;
     transition: .4s;
 
-    &:hover {
+    /*&:hover {
         color: #FFFFFF !important;
         background-color: $color-primary !important;
         border-color: $color-primary !important;
-    }
+    }*/
 
     &.active {
         color: #FFFFFF !important;
         background-color: $color-primary !important;
         border-color: $color-primary !important;
+    }
+}
+
+.category-second-navigation {
+    position: fixed;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    background-color: $color-white;
+    box-shadow: 10px 0 8px rgba($color: #000000, $alpha: .13);
+
+    .category-second-navigation-header {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        .title {
+            flex: 1 1 auto;
+        }
+
+        .action {
+            flex: 0 1 auto;
+        }
+    }
+
+    .category-second-navigation-content {
+        overflow-y: scroll;
+        height: 0;
+        transition: .8s;
+
+        &.active {
+            height: 160px;
+        }
     }
 }

@@ -25,7 +25,8 @@ const ListCategorySecond : React.FC<IListCategorySecond & ReduxToProps> = ({ lis
                         text={data.name}
                         toCategoryPath={data.path}
                         duration={800}
-                        offset={0}
+                        offset={-120}
+                        isSpy={true}
                     />
                 </li>
             ))}
