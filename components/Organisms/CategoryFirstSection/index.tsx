@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import CardCategoryFirst from '../../Molecules/card/CardCategoryFirst'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
@@ -87,6 +87,7 @@ const connector = connect(mapState, mapDispatch)
 type ReduxToProps = ConnectedProps<typeof connector>
 
 const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = ({ categoryPosition, updateCategoryPosition }) => {
+
     return (
         <div>
             <Carousel
@@ -96,7 +97,11 @@ const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = 
                 containerClass='container-category-carousel'
                 partialVisible={true}
                 slidesToSlide={1}
-                customButtonGroup={<ButtonGroup totalCat={dataCategory.length} getCurrentClick={updateCategoryPosition} currentClick={categoryPosition} />}
+                customButtonGroup={<ButtonGroup
+                    totalCat={dataCategory.length}
+                    getCurrentClick={updateCategoryPosition}
+                    currentClick={categoryPosition}
+                />}
                 arrows={false}
             >
                 {dataCategory.length >= 1 && dataCategory.map((data, i) => (
@@ -106,6 +111,9 @@ const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = 
                             title={data.name}
                             position={i + 1}
                             active={categoryPosition === i + 1}
+                            onClick={e => {
+                                updateCategoryPosition(i+1)
+                            }}
                         />
                     </div>
                 ))}

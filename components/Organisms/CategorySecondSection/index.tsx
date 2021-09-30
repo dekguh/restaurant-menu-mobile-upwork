@@ -9,17 +9,12 @@ import { dataCategory } from '../../utils/data'
 const CategorySecondSection = () => {
     const scrollY = useWindowScroll(1)
     const [isActive, setIsActive] = useState<boolean>(false)
-    console.log(scrollY)
 
     useEffect(() => {
         (scrollY >= 400) && setIsActive(true)
-        Events.scrollEvent.register('begin', function () {
-            console.log("begin", arguments);
-        });
+        Events.scrollEvent.register('begin', function () {});
 
-        Events.scrollEvent.register('end', function () {
-            console.log("end", arguments);
-        });
+        Events.scrollEvent.register('end', function () {});
 
         return (() => {
         Events.scrollEvent.remove('begin');
