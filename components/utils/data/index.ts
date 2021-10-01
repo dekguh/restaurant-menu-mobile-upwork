@@ -246,12 +246,7 @@ export const dataMenu : TDataMenu = [
         newMenu: false,
         bestseller: true,
         isAvailable: true,
-        listLabel: [
-            {
-                icon: IconDrink,
-                description: 'tea'
-            },
-        ]
+        listLabel: []
     },
     {
         name: 'Tea With Milk',
