@@ -1,5 +1,12 @@
 import React from "react";
 
+/**
+ * @type TDataCategory
+ * @param name is name category
+ * @param path path of category (ex: starters / main-courses)
+ * @param description description category
+ * @param image image of category (save on public folder)
+ */
 export type TDataCategory = Array<{
     name: string;
     path: string;
@@ -7,6 +14,20 @@ export type TDataCategory = Array<{
     image: string;
 }>
 
+/**
+ * @type TDataMenu
+ * @param name is name menu
+ * @param path path of menu (ex: steak / hamburger-deluxe)
+ * @param description description menu
+ * @param category is path category
+ * @param image image of menu (save on public folder)
+ * @param startPrice is start price
+ * @param endPrice is end price (if not, make value equal to startPrice)
+ * @param newMenu new menu
+ * @param bestseller new menu
+ * @param listLabel label of menu (ex [{ icon (svg on /public/icons/menu), description }])
+ * @param isAvailable menu is available
+ */
 export type TDataMenu = Array<{
     name: string;
     path: string;
@@ -22,6 +43,18 @@ export type TDataMenu = Array<{
         description: string;
     }>,
     isAvailable?: boolean;
+}>
+
+/**
+ * @type TDataSchedule
+ * @param day is day (ex: monday)
+ * @param openTime is open time (ex: 08.00)
+ * @param endTime is open time (ex: 23.00)
+ */
+export type TDataSchedule = Array<{
+    day: string;
+    openTime: string;
+    closeTime: string;
 }>
 
 export type TChooseRadio = {
@@ -113,12 +146,6 @@ export interface IBannerImageSection {
     image: string;
     height?: number;
 }
-
-export type TDataSchedule = Array<{
-    day: string;
-    openTime: string;
-    closeTime: string;
-}>
 
 export type IOpenHourSection = {
     description?: string;
