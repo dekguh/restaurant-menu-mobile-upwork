@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import CardCategoryFirst from '../../Molecules/card/CardCategoryFirst'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
-import { dataCategory } from '../../utils/data';
 import { RootState } from '../../utils/redux/Store';
 import { actUpdateCategoryPosition } from '../../utils/redux/choose/action';
 import { connect, ConnectedProps } from 'react-redux';
@@ -86,7 +85,7 @@ const mapDispatch = {
 const connector = connect(mapState, mapDispatch)
 type ReduxToProps = ConnectedProps<typeof connector>
 
-const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = ({ categoryPosition, updateCategoryPosition }) => {
+const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = ({ categoryPosition, updateCategoryPosition, dataCategory }) => {
 
     return (
         <div>
@@ -98,13 +97,13 @@ const CategoryFirstCarousel : React.FC<ICategoryFirstCarousel & ReduxToProps> = 
                 partialVisible={true}
                 slidesToSlide={1}
                 customButtonGroup={<ButtonGroup
-                    totalCat={dataCategory.length}
+                    totalCat={dataCategory.length || 0}
                     getCurrentClick={updateCategoryPosition}
                     currentClick={categoryPosition}
                 />}
                 arrows={false}
             >
-                {dataCategory.length >= 1 && dataCategory.map((data, i) => (
+                {dataCategory?.length >= 1 && dataCategory.map((data, i) => (
                     <div className='padding-r-4 padding-l-4' key={i}>
                         <CardCategoryFirst
                             image={data.image}

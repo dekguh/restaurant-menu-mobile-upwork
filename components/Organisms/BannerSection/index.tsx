@@ -1,13 +1,14 @@
 import React from 'react'
 import BannerContent from '../../Molecules/BannerSection/BannerContent'
 import BannerWrap from '../../Molecules/BannerSection/BannerWrap'
+import { IBannerSection } from '../../utils/types'
 
-const BannerSection : React.FC = () => {
+const BannerSection : React.FC<IBannerSection> = ({ title, description, image }) => {
     return (
-        <BannerWrap image='/foods/bg-banner.jpg'>
+        <BannerWrap image={image}>
             <BannerContent
-                title='Weekly Promo Special'
-                description='get special price cut of 20% every weekly'
+                title={title}
+                description={description}
             />
         </BannerWrap>
     )

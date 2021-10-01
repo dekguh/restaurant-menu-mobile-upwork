@@ -4,6 +4,7 @@ import BannerSection from '../Organisms/BannerSection'
 import CategoryFirstCarousel from '../Organisms/CategoryFirstSection'
 import HeaderFirstSection from '../Organisms/HeaderFirstSection'
 import ListMenuFirstSection from '../Organisms/ListMenuFirstSection'
+import { dataCategory, dataMenu } from '../utils/data'
 import { RootState } from '../utils/redux/Store'
 
 const mapState = (state: RootState) => ({
@@ -17,19 +18,30 @@ const MenuFirst : React.FC<ReduxToProps> = ({ chooseValue }) => {
     return (
     <>
         <div>
-            <HeaderFirstSection />
+            <HeaderFirstSection
+                description='All your favorites available for delivery & pick-up!'
+            />
         </div>
 
         {chooseValue === 'main_menu' && (<div className='margin-b-20'>
-            <CategoryFirstCarousel />
+            <CategoryFirstCarousel
+                dataCategory={dataCategory}
+            />
         </div>)}
 
         <div className='margin-b-20 padding-l-16 padding-r-16'>
-            <BannerSection />
+            <BannerSection
+                image='/foods/bg-banner.jpg'
+                title='Weekly Promo Special'
+                description='get special price cut of 20% every weekly'
+            />
         </div>
 
         <div className='margin-b-20 padding-l-16 padding-r-16'>
-            <ListMenuFirstSection />
+            <ListMenuFirstSection
+                dataCategory={dataCategory}
+                dataMenu={dataMenu}
+            />
         </div>
     </>
     )

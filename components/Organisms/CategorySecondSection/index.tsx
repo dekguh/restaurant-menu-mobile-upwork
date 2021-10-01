@@ -4,9 +4,9 @@ import { Events } from 'react-scroll'
 import ButtonText from '../../Atomics/control/ButtonText'
 import ListCategorySecond from '../../Molecules/CategorySecondSection/ListCategorySecond'
 import TitleSection from '../../Molecules/TitleSection'
-import { dataCategory } from '../../utils/data'
+import { ICategorySecondSection } from '../../utils/types'
 
-const CategorySecondSection = () => {
+const CategorySecondSection : React.FC<ICategorySecondSection> = ({ dataCategory }) => {
     const scrollY = useWindowScroll(1)
     const [isActive, setIsActive] = useState<boolean>(false)
 
@@ -23,7 +23,7 @@ const CategorySecondSection = () => {
     }, [])
 
     return (
-        <div className={scrollY >= 400 ? 'category-second-navigation' : 'cat'}>
+        <div className={scrollY >= 400 ? 'category-second-navigation' : 'category-second-navigation-nonactive'}>
             <div className='category-second-navigation-header'>
                 <div className='title'>
                     <TitleSection

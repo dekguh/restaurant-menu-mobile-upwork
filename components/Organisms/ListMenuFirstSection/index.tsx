@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { connect, ConnectedProps } from 'react-redux'
 import CardMenuFirst from '../../Molecules/card/CardMenuFirst'
 import TitleSection from '../../Molecules/TitleSection'
-import { dataCategory, dataMenu } from '../../utils/data'
 import { RootState } from '../../utils/redux/Store'
 import { IListMenuSection, TDataMenu } from '../../utils/types'
 
@@ -14,7 +13,7 @@ const mapState = (state: RootState) => ({
 const connector = connect(mapState, {})
 type ReduxToProps = ConnectedProps<typeof connector>
 
-const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ categoryPosition, chooseValue }) => {
+const ListMenuFirstSection : React.FC<IListMenuSection & ReduxToProps> = ({ categoryPosition, chooseValue, dataCategory, dataMenu }) => {
     const [dataFiltered, setDataFiltered] = useState<TDataMenu>(dataMenu.filter((data : any) => data.category.toLowerCase() === dataCategory[categoryPosition-1].path.toLowerCase()))
 
     useEffect(() => {

@@ -49,7 +49,9 @@ export type TCardCategoryFirst = {
     active: boolean;
 }
 
-export interface ICategoryFirstCarousel {}
+export interface ICategoryFirstCarousel {
+    dataCategory: TDataCategory;
+}
 
 export interface IBannerWrap {
     image: string;
@@ -67,7 +69,10 @@ export interface ITitleSection {
     description?: string;
 }
 
-export interface IListMenuSection {}
+export interface IListMenuSection {
+    dataCategory: TDataCategory;
+    dataMenu: TDataMenu;
+}
 
 export interface ICardMenuFirst {
     name: string;
@@ -155,3 +160,17 @@ export interface ICardMenuSecond extends ICardMenuFirst {
 }
 
 export interface IListLabelSecond extends IListLabelFirst {}
+
+export interface ICategorySecondSection {
+    dataCategory: TDataCategory;
+}
+
+export interface IHeaderFirstSection {
+    description?: string;
+}
+
+export interface IBannerSection {
+    image: string;
+    title: string;
+    description: string;
+}

@@ -27,7 +27,9 @@ const MenuSecond : React.FC = () => {
             </div>
 
             <div className='padding-l-16 padding-r-16 margin-b-20'>
-                <CategorySecondSection />
+                <CategorySecondSection
+                    dataCategory={dataCategory}
+                />
             </div>
 
             <div className='padding-l-16 padding-r-16 margin-b-20'>
