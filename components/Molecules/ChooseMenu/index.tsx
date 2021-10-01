@@ -35,6 +35,7 @@ const ChooseMenu : React.FC<IChooseMenu & PropsFromRedux> = ({ chooseValue, upda
                     text='Main Menu'
                     classes='block text-center'
                     onClick={e => updateChooseValue('main_menu')}
+                    defaultChecked={true}
                 />
 
                 <div className='divider-border margin-b-16 margin-t-16'></div>

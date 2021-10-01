@@ -32,6 +32,7 @@ export type TChooseRadio = {
     text: string;
     classes?: string;
     onClick?: React.MouseEventHandler;
+    defaultChecked?: boolean;
 }
 
 export type TChooseInitState = {
