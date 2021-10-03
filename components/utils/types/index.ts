@@ -25,7 +25,7 @@ export type TDataCategory = Array<{
  * @param endPrice is end price (if not, make value equal to startPrice)
  * @param newMenu new menu
  * @param bestseller new menu
- * @param listLabel label of menu (ex [{ icon (svg on /public/icons/menu), description }])
+ * @param listLabel label of menu (ex: [{ icon (svg on /public/icons/menu), description }])
  * @param isAvailable menu is available
  */
 export type TDataMenu = Array<{
@@ -165,6 +165,7 @@ export interface ICardListSchedule {
 
 export interface IListCategorySecond {
     listCategory: TDataCategory;
+    labelOnClick?(): void;
 }
 
 export interface ILabelCategorySecond {
@@ -174,6 +175,7 @@ export interface ILabelCategorySecond {
     offset: number;
     duration: number;
     isSpy?: boolean;
+    onClick?(): void;
 }
 
 export interface IListMenuSecondSection {

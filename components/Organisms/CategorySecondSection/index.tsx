@@ -23,7 +23,22 @@ const CategorySecondSection : React.FC<ICategorySecondSection> = ({ dataCategory
     }, [])
 
     return (
-        <div className={scrollY >= 400 ? 'category-second-navigation' : 'category-second-navigation-nonactive'}>
+    <>
+        <div>
+            <TitleSection
+                title='Category'
+                description='choose special variant'
+                classes='margin-b-12'
+            />
+
+            <div>
+                <ListCategorySecond
+                    listCategory={dataCategory}
+                />
+            </div>
+        </div>
+
+        {scrollY >= 400 && <div className='category-second-navigation'>
             <div className='category-second-navigation-header'>
                 <div className='title'>
                     <TitleSection
@@ -33,9 +48,9 @@ const CategorySecondSection : React.FC<ICategorySecondSection> = ({ dataCategory
                     />
                 </div>
 
-                {scrollY >= 400 && (<div className='action'>
+                <div className='action'>
                     <ButtonText text={isActive ? 'close' : 'open'} onClick={e => setIsActive(!isActive)} />
-                </div>)}
+                </div>
             </div>
 
             <div className='divider-border margin-b-12'></div>
@@ -43,9 +58,11 @@ const CategorySecondSection : React.FC<ICategorySecondSection> = ({ dataCategory
             <div className={`category-second-navigation-content ${isActive ? 'active' : 'nonactive'}`}>
                 <ListCategorySecond
                     listCategory={dataCategory}
+                    labelOnClick={() => setIsActive(false)}
                 />
             </div>
-        </div>
+        </div>}
+    </>
     )
 }
 
